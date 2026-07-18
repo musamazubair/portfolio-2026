@@ -98,7 +98,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-mesh min-h-screen text-zinc-300 relative selection:bg-emerald-500/20 selection:text-emerald-300">
+    <div className="bg-mesh min-h-screen text-zinc-300 relative selection:bg-emerald-500/20 selection:text-emerald-300 overflow-x-hidden">
       
       {/* Decorative Top Glowing Blob */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
@@ -281,13 +281,13 @@ export default function App() {
           >
             {[
               { label: "Engineering Practice", value: "6+ Years" },
-              { label: "Storefronts Shipped", value: "20+" },
+              { label: "Storefronts Shipped", value: "50+" },
               { label: "ADA Compliance Rate", value: "100%" },
               { label: "Avg PDP Load Time Reduction", value: "-35%" }
             ].map((stat, index) => (
               <div 
                 key={index} 
-                className="p-5 text-center flex flex-col justify-center border-r border-zinc-800/40 last:border-0"
+                className="p-5 text-center flex flex-col justify-center border-zinc-800/40 odd:border-r border-r-0 md:border-r md:last:border-r-0"
               >
                 <div className="font-display font-bold text-2xl md:text-3xl text-emerald-400 tracking-tight">{stat.value}</div>
                 <div className="text-[10px] md:text-xs font-mono text-zinc-500 uppercase tracking-widest mt-1.5">{stat.label}</div>
@@ -438,6 +438,70 @@ export default function App() {
               </motion.div>
             ))}
           </div>
+
+          {/* Education & Additional Background Segment */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            {/* Additional Experience Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="rounded-2xl glass-panel p-6 border border-zinc-800/60 shadow-lg flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[10px] font-mono tracking-widest text-emerald-400 uppercase font-semibold block mb-2">ADDITIONAL BACKGROUND</span>
+                <h3 className="font-display font-semibold text-base text-white">Earlier Industry Contributions</h3>
+                <p className="text-xs text-zinc-400 mt-3 leading-relaxed">
+                  WordPress, PHP/MySQL, and early-career native Android application engineering across specialized tech agencies (2016 – 2019):
+                </p>
+                <div className="mt-4 space-y-2.5">
+                  <div className="text-xs text-zinc-300 font-semibold flex justify-between">
+                    <span>Web Application Developer</span>
+                    <span className="text-zinc-500 font-mono text-[10px]">T-Horizon</span>
+                  </div>
+                  <div className="text-xs text-zinc-300 font-semibold flex justify-between">
+                    <span>Web Developer</span>
+                    <span className="text-zinc-500 font-mono text-[10px]">SoftVillas</span>
+                  </div>
+                  <div className="text-xs text-zinc-300 font-semibold flex justify-between">
+                    <span>Web & Android Developer</span>
+                    <span className="text-zinc-500 font-mono text-[10px]">Swarm IT Solutions</span>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-zinc-800/30 text-[10px] font-mono text-zinc-500">
+                Foundational full-stack and mobile client competencies.
+              </div>
+            </motion.div>
+
+            {/* Education Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="rounded-2xl glass-panel p-6 border border-zinc-800/60 shadow-lg flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[10px] font-mono tracking-widest text-emerald-400 uppercase font-semibold block mb-2">ACADEMIC FOUNDATION</span>
+                <h3 className="font-display font-semibold text-base text-white">BS, Software Engineering</h3>
+                <p className="text-xs text-zinc-400 mt-3 leading-relaxed">
+                  Comprehensive grounding in computer science foundations, algorithm architectures, design patterns, and full-stack system implementation.
+                </p>
+                <div className="mt-5 space-y-1.5">
+                  <div className="text-sm font-semibold text-white">Abasyn University</div>
+                  <div className="text-xs text-zinc-400">Islamabad Campus, Pakistan</div>
+                </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-zinc-800/30 text-[10px] font-mono text-zinc-500 flex justify-between">
+                <span>Graduated 2018</span>
+                <span className="text-emerald-400 font-semibold">4-Year Degree</span>
+              </div>
+            </motion.div>
+
+          </div>
         </section>
 
 
@@ -457,9 +521,9 @@ export default function App() {
               </p>
 
               {/* Real-time Pakistan Clock */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs text-zinc-400">
-                <Clock className="h-4 w-4 text-emerald-400 animate-pulse" />
-                <span className="font-mono text-[10px]">CURRENT TIME IN LAHORE: <strong className="text-white">{currentTime || "--:--:--"}</strong></span>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs text-zinc-400 max-w-full overflow-hidden whitespace-nowrap">
+                <Clock className="h-3.5 w-3.5 text-emerald-400 animate-pulse shrink-0" />
+                <span className="font-mono text-[9px] sm:text-[10px] whitespace-nowrap">CURRENT TIME IN LAHORE: <strong className="text-white">{currentTime || "--:--:--"}</strong></span>
               </div>
 
               {/* Direct Action triggers */}
@@ -504,22 +568,13 @@ export default function App() {
               <Mail className="h-4.5 w-4.5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/muhammad-usama-zubair/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-4.5 w-4.5" />
-            </a>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all"
-              aria-label="GitHub"
-            >
-              <Github className="h-4.5 w-4.5" />
             </a>
           </div>
         </div>

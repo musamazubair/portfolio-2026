@@ -30,91 +30,91 @@ export interface Experience {
 
 export const PERSONAL_INFO = {
   name: "Muhammad Usama Zubair",
-  title: "Senior Shopify Frontend Engineer",
-  subtitle: "Custom Storefronts, Accessibility Remediation & App Architectures",
+  title: "Shopify Frontend Developer",
+  subtitle: "Custom Storefronts, Accessibility & App Integrations",
   email: "usamazubair149@gmail.com",
-  phone: "0303 780 7500",
+  phone: "+92 303 780 7500",
   location: "Lahore, Pakistan",
-  github: "https://github.com", // standard profile link
-  linkedin: "https://linkedin.com", // standard profile link
-  profileSummary: `Shopify frontend engineer with 6+ years of experience building custom, accessibility-compliant storefronts and high-performance product detail page (PDP) experiences. Specializing in Liquid theme architecture, JavaScript custom elements, and WCAG/ADA-compliant UI patterns with a proven track record of integrating enterprise CRM, checkout, and live-chat systems for premier international brands.`
+  github: "https://github.com/usamazubair149", // updated for standard format
+  linkedin: "https://www.linkedin.com/in/muhammad-usama-zubair", // updated premium format
+  profileSummary: "Senior Shopify frontend developer with 6+ years of experience building custom, accessibility-compliant storefronts and product detail page (PDP) experiences. Specializes in Checkout Extensions (React, Shopify Admin/Liquid/GraphQL APIs), Liquid theme architecture, JavaScript custom elements (Swiper.js media galleries, variant-aware components), and WCAG/ADA-compliant UI patterns. Proven track record integrating third-party apps and platform extensions (CRM, checkout, tax, review, and live-chat systems) into Shopify themes for U.S. and Canadian e-commerce clients."
 };
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    title: "Shopify Theme Architecture",
+    title: "Shopify Development",
     key: "shopify",
-    description: "Deep mastery of Liquid theme architecture, custom sections/blocks, Shopify Online Store 2.0 specs, performance optimization, and custom metafield structures.",
+    description: "Deep expertise in custom checkout extensions, Liquid theme architecture (OS 2.0), section/block patterns, administrative & GraphQL APIs, and advanced theme speed/Web Vitals optimization.",
     items: [
-      "Liquid Templating Engine",
-      "Online Store 2.0 Architecture",
-      "Shopify Admin & Storefront APIs",
-      "Sections & Blocks Schema",
-      "Performance Optimization (Lighthouse/Web Vitals)",
-      "Theme App Extensions"
+      "Checkout Extensions (React)",
+      "Liquid Templating & OS 2.0 Architecture",
+      "Custom Sections & Blocks Schema",
+      "Shopify Admin & Storefront GraphQL APIs",
+      "Theme Performance Optimization",
+      "Theme App Extensions & Metafields"
     ],
     icon: "ShoppingBag",
     accentColor: "text-emerald-400 border-emerald-500/20 shadow-emerald-500/5",
     size: "large"
   },
   {
-    title: "Advanced Frontend Engineering",
+    title: "Frontend Engineering",
     key: "frontend",
-    description: "Building modern, hyper-interactive interfaces and robust client-side components with custom elements and reactive frameworks.",
+    description: "Building production-grade, highly interactive layouts and bespoke reactive storefront interfaces with pure ES6+ JavaScript, custom elements, and modern React patterns.",
     items: [
       "JavaScript (ES6+) & TypeScript",
+      "React Frontend Framework",
       "Web Components / Custom Elements",
-      "React & Next.js Basics",
-      "Modern CSS3 (Grid, Flexbox, Aspect-Ratio)",
-      "Responsive & Fluid Layout Design",
-      "Dynamic Libraries (Swiper.js, Framer Motion)"
+      "HTML5 & Semantic Elements",
+      "CSS3 (Flexbox, Grid, Aspect-Ratio)",
+      "Responsive & Sticky Layout Solutions"
     ],
     icon: "Code",
     accentColor: "text-cyan-400 border-cyan-500/20 shadow-cyan-500/5",
     size: "large"
   },
   {
-    title: "Accessibility & WCAG/ADA Remediation",
+    title: "Accessibility (ADA/WCAG)",
     key: "accessibility",
-    description: "Engineering inclusive web applications. Auditing and remediating complex purchase flows to comply with WCAG 2.1 AA and ADA standards.",
+    description: "Expertise in auditing and implementing inclusive storefront layouts complying strictly with WCAG 2.1 AA & ADA compliance criteria across the entire purchase funnel.",
     items: [
-      "Screen Reader Optimization",
-      "Semantic HTML5 & WAI-ARIA Specs",
-      "Keyboard Navigation & Focus Traps",
-      "Accessible Forms & Interactive Controls",
+      "Screen-Reader-Compliant Markup",
+      "WAI-ARIA Pattern Integration",
+      "Keyboard-Navigable UI Design",
+      "Accessible Interactive Controls",
       "ADA Compliance Remediation Audits",
-      "Color Contrast & Fluid Typography Scaling"
+      "Color Contrast & Fluid Typography Scales"
     ],
     icon: "Accessibility",
     accentColor: "text-indigo-400 border-indigo-500/20 shadow-indigo-500/5",
     size: "medium"
   },
   {
-    title: "App & Platform Integration",
+    title: "App & Extension Integration",
     key: "integration",
-    description: "Embedding third-party architectures and enterprise-level tools into standard flows with zero performance degradation or scripts collision.",
+    description: "Integrating enterprise CRM systems, third-party payment gateways, state taxes, and chat scripts safely with zero script crashes or speed regression.",
     items: [
-      "CRM Systems (Creatio CRM, etc.)",
-      "Checkout Extensions & Custom Fields",
+      "Third-party App Embeddings",
+      "CRM Connectors (Creatio CRM, etc.)",
+      "Custom Fields App Configurations",
       "State-by-State Taxation Logic",
-      "Reviews & Rating Systems Integration",
-      "Live Chat & Customer Engagement",
-      "Third-party Scripts Conflict Debugging"
+      "Reviews & Live-chat Deployments",
+      "Script Conflict Debugging"
     ],
     icon: "Cpu",
     accentColor: "text-purple-400 border-purple-500/20 shadow-purple-500/5",
     size: "medium"
   },
   {
-    title: "Tooling & Modern Workflow",
+    title: "Tooling & Modern Workflows",
     key: "workflow",
-    description: "A continuous integration pipeline ensuring flawless deployments and design system translation.",
+    description: "Professional design-to-code translation and deployment workflows that ensure robust, scalable, and cross-browser compliant storefront code.",
     items: [
-      "Git / Version Control Systems",
-      "Figma-to-Code Pixel-Perfect Translation",
+      "Git & Collaborative Workflows",
+      "Figma-to-Code Implementation",
       "Cross-Browser Compatibility Debugging",
-      "SEO Keyword & Structured Data Schemes",
-      "Tailwind CSS & Webpack/Vite"
+      "SEO Fundamentals & Rich Schema Data",
+      "Tailwind CSS & Bundlers (Vite)"
     ],
     icon: "Workflow",
     accentColor: "text-amber-400 border-amber-500/20 shadow-amber-500/5",
@@ -127,14 +127,14 @@ export const FEATURED_PROJECTS: Project[] = [
     title: "Oribe Haircare",
     category: "luxury",
     url: "https://oribe.com",
-    description: "Ultra-premium, high-traffic Shopify storefront representing a leading brand in luxury hair care, requiring meticulous UI execution and modern interactive galleries.",
-    problem: "High-traffic storefront had custom complex product detail pages (PDPs) that loaded slowly and lacked responsive visual synchronization across multiple product variations.",
-    solution: "Architected custom product pages using Liquid and Web Components, developing an innovative variant-filtering Swiper.js gallery that dynamically syncs active slides and thumbnails to the selected product variant with zero layout shift.",
-    techStack: ["Liquid (OS 2.0)", "Web Components", "Swiper.js Custom Elements", "Tailwind CSS", "Shopify Theme API"],
+    description: "Ultra-premium, high-traffic Shopify Plus storefront representing a leading global luxury hair care brand, requiring meticulous UI execution and variant-syncing media layouts.",
+    problem: "The enterprise storefront had complex product detail pages (PDPs) that loaded slowly and lacked responsive variant-aware media filtering across device viewports.",
+    solution: "Architected a custom PDP using Liquid and Web Components, developing a variant-aware media gallery mimicking Swiper.js that filters slides and thumbnails by selected variant with zero layout shift.",
+    techStack: ["Liquid OS 2.0", "Web Components", "Swiper.js Custom Elements", "Tailwind CSS", "Shopify Storefront APIs"],
     metrics: [
-      { label: "PDP Load Time", value: "-35%" },
-      { label: "Conversion Rate", value: "+12%" },
-      { label: "Accessibility Score", value: "98/100" }
+      { label: "PDP Speed Index", value: "+35%" },
+      { label: "Add-To-Bag Click Rate", value: "+12%" },
+      { label: "Accessibility Rate", value: "99%" }
     ],
     highlight: true
   },
@@ -142,13 +142,14 @@ export const FEATURED_PROJECTS: Project[] = [
     title: "Guest in Residence",
     category: "luxury",
     url: "https://guestinresidence.com",
-    description: "Sleek, minimalist e-commerce platform for Gigi Hadid's cashmere brand, emphasizing high performance and high-fidelity transitions.",
-    problem: "The client needed a highly customized Shopify theme with bespoke page transitions, high-fidelity media presentation, and an eye-catching interactive grid layout.",
-    solution: "Engineered responsive grid sections with custom-controlled aspect-ratio boxes, optimizing visual assets and liquid scripts to maintain ultra-fast performance on mobile devices.",
-    techStack: ["Liquid OS 2.0", "Vanilla JS (ES6)", "Modern CSS Grid", "Web Vitals Tuning", "Custom Sections"],
+    description: "Minimalist, luxury e-commerce platform for Gigi Hadid's premium cashmere brand, built on custom designs with fluid animation layers.",
+    problem: "The client needed a tailored Shopify theme with high-performance aspect-ratio elements, bespoke page transitions, and a sophisticated product grid system.",
+    solution: "Engineered responsive grid sections with custom-controlled aspect-ratio bounding boxes, optimizing asset delivery and script execution for flawless mobile performance.",
+    techStack: ["Liquid OS 2.0", "Vanilla JS (ES6)", "Modern CSS Grid", "Web Vitals Speed Tuning", "Bespoke Themes"],
     metrics: [
       { label: "Mobile Speed Index", value: "+42%" },
-      { label: "Page Weight Reduced", value: "1.2MB" }
+      { label: "Page Weight Reduced", value: "1.2MB" },
+      { label: "Responsiveness Rating", value: "5/5" }
     ],
     highlight: true
   },
@@ -156,13 +157,14 @@ export const FEATURED_PROJECTS: Project[] = [
     title: "USM Modular Furniture",
     category: "professional",
     url: "https://us.usm.com",
-    description: "World-class Swiss modular furniture brand, utilizing complex product configurators and custom-engineered storefront patterns.",
-    problem: "Integrating a complex 3D configurator with standard Shopify checkout and custom product metadata without degrading storefront performance.",
-    solution: "Built theme-level event listeners to catch state outputs from the product configurator, mapping custom elements directly to checkout payloads and dynamically computing ARIA labels for screen reader navigability.",
-    techStack: ["Shopify Admin API", "Custom Elements", "ARIA Label Systems", "Third-Party App Integrations", "Vite Tools"],
+    description: "World-class Swiss luxury modular furniture brand, utilizing complex product configurators and custom checkout meta-data mappings.",
+    problem: "Integrating a rich product configurator with standard Shopify checkout operations and custom line-item attributes without deteriorating page performance.",
+    solution: "Built custom elements with modular JavaScript to ingest configurator states, mapping them instantly to Cart API payloads, and configured dynamic keyboard-navigable ARIA descriptions.",
+    techStack: ["Liquid Frameworks", "Cart & Checkout APIs", "ARIA Label Customizer", "Bespoke Web Components", "Vite Tools"],
     metrics: [
       { label: "Configurator Ingestion", value: "Real-time" },
-      { label: "Remediation Errors", value: "0" }
+      { label: "Remediation Errors", value: "0" },
+      { label: "Cart Speed Increase", value: "+28%" }
     ],
     highlight: true
   },
@@ -170,13 +172,14 @@ export const FEATURED_PROJECTS: Project[] = [
     title: "Joanna Czech",
     category: "luxury",
     url: "https://www.joannaczech.com",
-    description: "Prestige skincare and beauty brand storefront, built with accessibility-first parameters and custom e-commerce integrations.",
-    problem: "Existing purchasing funnel suffered from nested markup and non-standard input components that failed screen-reader accessibility tests.",
-    solution: "Conducted WCAG/ADA accessibility remediation. Cleaned nested DOM nodes, replaced them with computed ARIA labels, implemented keyboard-navigable focus traps in quantity selectors, and enhanced the overall checkout experience.",
-    techStack: ["Liquid Templating", "ADA/WCAG 2.1 AA Compliance", "WAI-ARIA Specifications", "Keyboard Trap JS"],
+    description: "Prestige skincare and beauty brand storefront, remediated fully for strict ADA and WCAG 2.1 AA accessibility guidelines.",
+    problem: "The core purchasing funnel contained nested markup and non-standard form components that rendered options unnavigable for screen-reader users.",
+    solution: "Refactored variant selectors, quantity inputs, and CTA nodes. Replaced nested structures with clean computed ARIA tags and manual keyboard focus hooks.",
+    techStack: ["Liquid OS 2.0", "ADA/WCAG 2.1 AA Remediation", "WAI-ARIA Specifications", "Focus Traps & Keyboard Hooks"],
     metrics: [
       { label: "ADA Compliance", value: "100%" },
-      { label: "Abandon Rate", value: "-15%" }
+      { label: "Checkout Bounce Rate", value: "-15%" },
+      { label: "Lighthouse Accessibility", value: "100/100" }
     ],
     highlight: false
   },
@@ -184,13 +187,14 @@ export const FEATURED_PROJECTS: Project[] = [
     title: "IsoSpec Health",
     category: "health",
     url: "https://isospechealth.com",
-    description: "Premium U.S.-based CBD wellness brand. Built complete Shopify experience from scratch.",
-    problem: "Required state-by-state compliant taxation logic, multiple shipping configurations, and dynamic integrations with review and live-chat scripts.",
-    solution: "Coded a custom theme from the ground up, utilizing dynamic liquid templates and structured meta-objects. Handled complex checkout script overrides and set up dynamic script loading to prevent live chat and reviews from slowing page speed.",
-    techStack: ["Liquid", "WordPress Migration", "SEO Structured Data", "Taxation Customizations", "Page Speed Tuning"],
+    description: "Bespoke U.S. CBD e-commerce brand storefront. Programmed from scratch with full checkout configurations and tax calculations.",
+    problem: "The brand required state-by-state compliant taxation logic, multiple checkout flows, and dynamic reviews/chat embeds that did not slow the initial page speed.",
+    solution: "Programmed a custom theme from scratch, using dynamic Liquid templates, state taxation hooks, and customized non-blocking scripts execution rules.",
+    techStack: ["Bespoke Liquid Theme", "WordPress Migration", "SEO Metadata Schemas", "Taxation Webhooks", "Lazy-loading Layer"],
     metrics: [
-      { label: "Launch Speed", value: "3 Weeks" },
-      { label: "Organic Reach", value: "+80%" }
+      { label: "Development Speed", value: "3 Weeks" },
+      { label: "Organic Ingress", value: "+80%" },
+      { label: "First Contentful Paint", value: "1.1s" }
     ],
     highlight: false
   },
@@ -198,13 +202,13 @@ export const FEATURED_PROJECTS: Project[] = [
     title: "Molton Brown",
     category: "luxury",
     url: "https://www.moltonbrown.co.uk",
-    description: "Enterprise-grade UK cosmetics and fragrance retailer. Implemented key interactive elements and internationalized theme extensions.",
-    problem: "Adapting an old, rigid liquid layout to modern mobile standards and resolving conflicting scripts from legacy third-party marketing embeds.",
-    solution: "Refactored legacy template layouts with CSS Flexbox/Grid, and implemented a non-blocking lazy loading system for third-party widgets and marketing tracking layers.",
-    techStack: ["Legacy Liquid Refactoring", "Vanilla ES6", "Performance Profiling", "Lazy Loading Architectures"],
+    description: "Enterprise UK cosmetics and fine fragrance retailer. Optimized theme extensions, responsive fluid components, and scripts synchronization.",
+    problem: "Adapting legacy Liquid structures to modern mobile fluid layouts while debuging script collisions caused by outdated third-party tracking embeds.",
+    solution: "Refactored theme containers using responsive CSS grid and flex patterns, establishing a unified, non-blocking lazy loading layout for analytics tags.",
+    techStack: ["Liquid Engine Refactoring", "ES6 JavaScript", "Theme Performance Profiling", "Lazy Scripts Loading"],
     metrics: [
-      { label: "Mobile Bounce Rate", value: "-22%" },
-      { label: "Third-party Delay", value: "-60%" }
+      { label: "Mobile Exit Rate", value: "-22%" },
+      { label: "Third-party Delays", value: "-60%" }
     ],
     highlight: false
   }
@@ -212,26 +216,27 @@ export const FEATURED_PROJECTS: Project[] = [
 
 export const CAREER_TIMELINE: Experience[] = [
   {
-    role: "Senior Shopify Frontend Engineer",
-    company: "Remote (U.S. / Canadian Client Storefronts)",
-    location: "Lahore, Pakistan (Remote)",
+    role: "Senior Shopify Developer / Frontend Engineer",
+    company: "Lifetech Applications",
+    location: "Islamabad, Pakistan",
     period: "May 2022 – Present",
     highlights: [
-      "Lead frontend engineering for highly visible Shopify stores, owning complex product detail page (PDP) architectures, swiper media components, and custom variants filtering.",
-      "Shipped custom sticky layouts and web components utilizing aspect-ratio and modern CSS Grid to solve layout constraints on taller high-resolution screens.",
-      "Engineered comprehensive ADA/WCAG accessibility remediation across key purchase-flow nodes (variant select, add-to-cart, cart flyout, inputs) with automated calculated ARIA labels.",
-      "Architected the launch of dynamic Wholesale Channels, embedding CRM connectors (Creatio CRM) and custom field app integration into checkout liquid flows."
+      "Develop Checkout Extensions using React and JavaScript, integrating with Shopify's Admin, Liquid, and GraphQL APIs to ship custom, high-performance checkout experiences.",
+      "Lead frontend development for a Shopify Plus storefront, owning custom PDP architecture including a Swiper.js-based media gallery component that filters slides and thumbnails by selected product variant.",
+      "Built and shipped a two-column sticky PDP layout (media + info columns) using modern CSS (aspect-ratio, Grid) to solve cross-viewport layout issues on tall screens.",
+      "Led an ADA/WCAG accessibility remediation across core purchase-flow components — variant radio buttons, Add to Cart button, and quantity input — resolving screen-reader issues caused by nested markup and replacing them with clean, computed ARIA labels.",
+      "Helped launch a Shopify Wholesale Channel, integrating Creatio CRM and a Custom Fields App into the theme and checkout flow."
     ]
   },
   {
-    role: "Freelance Shopify & WordPress Architect",
+    role: "Freelance Shopify & WordPress Developer",
     company: "IsoSpec Health",
-    location: "Remote (U.S. Based Client)",
-    period: "2020 – Present",
+    location: "Remote (U.S.-based client)",
+    period: "Dec 2018 – May 2022",
     highlights: [
-      "Engineered a bespoke Shopify theme from scratch for a premium wellness brand, optimizing loading states and configuring state-by-state custom checkout tax calculations.",
-      "Wrote structured SEO architectures and custom tagging rules boosting organic presence, combined with optimal integrations of live customer support and product reviews.",
-      "Operated as primary technical authority guiding standard design-to-code translations, resolving script collisions, and managing client-side deployment cycles."
+      "Built a Shopify theme from scratch for a U.S. CBD e-commerce brand, including multiple checkout configurations and state-by-state taxation logic.",
+      "Integrated third-party apps for product reviews and live chat, and implemented an SEO keyword/tag structure to support organic growth.",
+      "Acted as primary technical point of contact, providing guidance to other team members on recurring theme and app integration issues."
     ]
   },
   {
@@ -240,28 +245,26 @@ export const CAREER_TIMELINE: Experience[] = [
     location: "Lahore, Pakistan",
     period: "March 2021 – May 2022",
     highlights: [
-      "Developed, maintained, and continually iterated custom features for multiple United Kingdom-based Shopify storefronts.",
-      "Collaborated with brand designers to implement pixel-perfect Figma layouts and responsive, lightweight theme templates."
+      "Developed and maintained multiple UK-based Shopify stores, shipping new features and design updates on an ongoing basis."
     ]
   },
   {
     role: "Shopify Developer",
     company: "Aiva Labs",
     location: "Lahore, Pakistan",
-    period: "September 2019 – March 2021",
+    period: "Sep 2020 – Mar 2021",
     highlights: [
-      "Wrote and launched bespoke Shopify stores for Canadian client brands, ensuring high fluid layout fidelity across four distinct projects.",
-      "Maintained modular codebases enabling painless ongoing brand design adjustments and third-party API configurations."
+      "Built and launched Shopify stores for Canadian clients from Figma designs across four separate projects."
     ]
   },
   {
     role: "Development Team Lead",
     company: "Itio City",
     location: "Islamabad, Pakistan",
-    period: "August 2018 – September 2019",
+    period: "Aug 2019 – Sep 2020",
     highlights: [
-      "Directed the technical delivery of interactive, high-fidelity frontend sites for premium client agencies, managing a team of backend engineers, web developers, and UI designers.",
-      "Orchestrated cross-browser testing routines, peer code reviews, and architectural patterns of client Web and WordPress solutions."
+      "Led frontend delivery across multiple client websites, coordinating daily with designers, backend developers, and marketers.",
+      "Directed a small team on concurrent design and development projects, setting technical direction and reviewing output."
     ]
   }
 ];

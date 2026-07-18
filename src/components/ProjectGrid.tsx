@@ -39,12 +39,12 @@ export default function ProjectGrid() {
     <div id="projects" className="py-12">
       {/* Filters and Search Bar Container */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
-        <div className="flex flex-wrap gap-2">
+        <div className="flex gap-2 overflow-x-auto no-scrollbar pb-3 -mx-6 px-6 md:mx-0 md:px-0 md:pb-0 md:flex-wrap w-[calc(100%+3rem)] md:w-auto">
           {categoryLabels.map((cat) => (
             <button
               key={cat.value}
               onClick={() => setActiveFilter(cat.value)}
-              className={`px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wide uppercase transition-all duration-300 ${
+              className={`shrink-0 px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wide uppercase transition-all duration-300 ${
                 activeFilter === cat.value
                   ? "bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shadow-lg shadow-emerald-500/5"
                   : "bg-zinc-900/40 text-zinc-400 border border-zinc-800 hover:text-zinc-200 hover:bg-zinc-900/80"
