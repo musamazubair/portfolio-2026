@@ -7,161 +7,175 @@ import {
 } from "../data/portfolioData";
 import { 
   ExternalLink, 
-  Award, 
-  Zap, 
   Layers, 
-  ShieldCheck, 
+  ShieldAlert, 
   Sparkles, 
   X, 
-  Search,
-  BookOpen
+  BookOpen,
+  CheckCircle2,
+  Wrench,
+  TrendingUp,
+  ArrowUpRight,
+  FileCode2,
+  FolderGit2
 } from "lucide-react";
 
-type FilterType = "all" | "luxury" | "professional" | "health";
-
 export default function ProjectGrid() {
-  const [activeFilter, setActiveFilter] = useState<FilterType>("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [showSecondaryIndex, setShowSecondaryIndex] = useState(false);
 
-  const filteredProjects = activeFilter === "all" 
-    ? FEATURED_PROJECTS 
-    : FEATURED_PROJECTS.filter(p => p.category === activeFilter);
-
-  const categoryLabels: { value: FilterType; label: string }[] = [
-    { value: "all", label: "All Engineering" },
-    { value: "luxury", label: "Luxury Storefronts" },
-    { value: "professional", label: "B2B & Enterprise" },
-    { value: "health", label: "Health & Specialized" }
-  ];
-
   return (
     <div id="projects" className="py-12">
-      {/* Filters and Search Bar Container */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
-        <div className="flex gap-2 overflow-x-auto no-scrollbar pb-3 -mx-6 px-6 md:mx-0 md:px-0 md:pb-0 md:flex-wrap w-[calc(100%+3rem)] md:w-auto">
-          {categoryLabels.map((cat) => (
-            <button
-              key={cat.value}
-              onClick={() => setActiveFilter(cat.value)}
-              className={`shrink-0 px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wide uppercase transition-all duration-300 ${
-                activeFilter === cat.value
-                  ? "bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shadow-lg shadow-emerald-500/5"
-                  : "bg-zinc-900/40 text-zinc-400 border border-zinc-800 hover:text-zinc-200 hover:bg-zinc-900/80"
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
+      {/* Section Header Controls */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+        <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
+          <FolderGit2 className="h-4 w-4 text-emerald-400" />
+          <span>Showing {FEATURED_PROJECTS.length} Featured Technical Case Studies</span>
         </div>
 
-        {/* Floating Secondary Index Button */}
+        {/* Secondary Brands Index Drawer Trigger */}
         <button
           onClick={() => setShowSecondaryIndex(true)}
-          className="flex items-center gap-2 px-4.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-xs font-medium text-zinc-300 hover:text-white transition-all cursor-pointer shadow-md"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-xs font-mono text-zinc-300 hover:text-white transition-all cursor-pointer shadow-md self-start sm:self-auto"
         >
-          <BookOpen className="h-4 w-4 text-emerald-400" />
-          <span>Secondary Brands Index ({OTHER_PROJECTS.length})</span>
+          <BookOpen className="h-3.5 w-3.5 text-emerald-400" />
+          <span>Secondary Agency Brands ({OTHER_PROJECTS.length})</span>
         </button>
       </div>
 
-      {/* Main Bento Project Grid */}
-      <motion.div 
-        layout 
-        className="grid grid-cols-1 md:grid-cols-12 gap-6"
-      >
-        {filteredProjects.map((project, idx) => {
-          // Give various layout sizes based on index or highlights to establish rhythm
-          const isLargeCard = idx === 0 || idx === 1;
-          const colSpan = isLargeCard ? "md:col-span-8" : "md:col-span-4";
-          
-          return (
-            <motion.div
-              layout
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              key={project.title}
-              onClick={() => setSelectedProject(project)}
-              className={`${colSpan} group relative rounded-2xl glass-panel p-6 border border-zinc-800/80 flex flex-col justify-between transition-all duration-500 hover:scale-[1.01] hover:border-zinc-700 cursor-pointer shadow-lg overflow-hidden`}
-            >
-              {/* Card glowing visual accent */}
-              <div 
-                className="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none blur-3xl"
-                style={{
-                  background: project.category === "luxury" 
-                    ? "radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%)" 
-                    : project.category === "professional" 
-                      ? "radial-gradient(circle, rgba(52,211,153,0.15) 0%, transparent 70%)" 
-                      : "radial-gradient(circle, rgba(16,185,129,0.12) 0%, transparent 70%)"
-                }}
-              />
+      {/* Main 2-Column Clean Case Studies Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {FEATURED_PROJECTS.map((project, idx) => (
+          <motion.article
+            key={project.title}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: idx * 0.15 }}
+            className="rounded-3xl glass-panel p-7 sm:p-8 border border-zinc-800/90 flex flex-col justify-between hover:border-zinc-700 transition-all duration-300 shadow-2xl relative overflow-hidden group"
+          >
+            {/* Top Glowing Ambient Blob */}
+            <div className="absolute -top-32 -right-32 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl group-hover:bg-emerald-500/10 transition-colors pointer-events-none" />
 
-              <div>
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase font-semibold">
-                      {project.category}
-                    </span>
-                    {project.highlight && (
-                      <span className="flex items-center gap-1 bg-emerald-500/10 border border-emerald-500/20 text-[9px] text-emerald-400 font-mono px-1.5 py-0.5 rounded-full">
-                        <Sparkles className="h-2.5 w-2.5 text-emerald-400" /> Featured Core
-                      </span>
-                    )}
-                  </div>
-                  
-                  <span className="text-zinc-600 group-hover:text-zinc-400 transition-colors">
-                    <ExternalLink className="h-4.5 w-4.5" />
+            <div>
+              {/* Header Badging */}
+              <div className="flex items-center justify-between gap-2 mb-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-emerald-400 uppercase bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-md">
+                    {project.client}
+                  </span>
+                  <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider">
+                    {project.category === "audit" ? "Architecture Audit" : "Theme Engineering"}
                   </span>
                 </div>
 
-                <h3 className="font-display font-semibold text-xl text-white group-hover:text-emerald-400 transition-colors">
-                  {project.title}
-                </h3>
+                <div className="flex items-center gap-1 text-[10px] font-mono text-zinc-400">
+                  <Sparkles className="h-3 w-3 text-emerald-400" />
+                  <span>Real-World Production</span>
+                </div>
+              </div>
 
-                <p className="text-xs text-zinc-400 mt-2 line-clamp-2 leading-relaxed">
-                  {project.description}
+              {/* Title & Overview */}
+              <h3 className="font-display font-bold text-2xl text-white group-hover:text-emerald-300 transition-colors leading-tight">
+                {project.title}
+              </h3>
+              <p className="text-xs text-zinc-400 mt-2.5 leading-relaxed">
+                {project.description}
+              </p>
+
+              {/* Metric Highlights Banner */}
+              {project.metrics && (
+                <div className="mt-6 grid grid-cols-3 gap-2.5 bg-zinc-950/60 border border-zinc-800/80 p-3.5 rounded-xl">
+                  {project.metrics.map((m, mIdx) => (
+                    <div key={mIdx} className="text-center">
+                      <span className="text-[9px] sm:text-[10px] font-mono text-zinc-500 uppercase tracking-wider block truncate">
+                        {m.label}
+                      </span>
+                      <span className="text-xs sm:text-sm font-bold font-mono text-emerald-400 mt-1 block">
+                        {m.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Structured Section 1: Problem */}
+              <div className="mt-6 pt-5 border-t border-zinc-800/60">
+                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-amber-400 uppercase tracking-wider mb-2">
+                  <ShieldAlert className="h-3.5 w-3.5" />
+                  <span>Problem</span>
+                </div>
+                <p className="text-xs text-zinc-300 leading-relaxed bg-zinc-900/40 border border-zinc-800/50 p-3.5 rounded-xl">
+                  {project.problem}
                 </p>
-
-                {/* Performance Metrics preview */}
-                {project.metrics && (
-                  <div className="mt-5 grid grid-cols-2 gap-3 border-t border-zinc-800/50 pt-4">
-                    {project.metrics.slice(0, 2).map((m, mIdx) => (
-                      <div key={mIdx}>
-                        <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider">{m.label}</div>
-                        <div className="text-sm font-bold font-mono text-emerald-400 mt-0.5">{m.value}</div>
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-1.5">
-                {project.techStack.slice(0, 4).map((tech) => (
-                  <span 
-                    key={tech} 
-                    className="text-[9px] font-mono bg-zinc-900 border border-zinc-800 text-zinc-400 px-2.5 py-1 rounded-md"
-                  >
-                    {tech}
-                  </span>
-                ))}
-                {project.techStack.length > 4 && (
-                  <span className="text-[9px] font-mono text-zinc-500 px-1 py-1">
-                    +{project.techStack.length - 4} more
-                  </span>
-                )}
+              {/* Structured Section 2: Tech Stack */}
+              <div className="mt-5">
+                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-cyan-400 uppercase tracking-wider mb-2.5">
+                  <Layers className="h-3.5 w-3.5" />
+                  <span>Tech Stack</span>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {project.techStack.map((tech) => (
+                    <span 
+                      key={tech} 
+                      className="text-[10px] font-mono bg-zinc-900 border border-zinc-800 text-zinc-300 px-2.5 py-1 rounded-md"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </motion.div>
-          );
-        })}
-      </motion.div>
 
-      {/* Slide-over Side Drawer Panel for Selected Project Architecture */}
+              {/* Structured Section 3: Execution */}
+              <div className="mt-5">
+                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-emerald-400 uppercase tracking-wider mb-2">
+                  <Wrench className="h-3.5 w-3.5" />
+                  <span>Execution</span>
+                </div>
+                <p className="text-xs text-zinc-300 leading-relaxed bg-zinc-900/40 border border-zinc-800/50 p-3.5 rounded-xl">
+                  {project.execution}
+                </p>
+              </div>
+
+              {/* Structured Section 4: Outcome */}
+              <div className="mt-5">
+                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-emerald-300 uppercase tracking-wider mb-2">
+                  <TrendingUp className="h-3.5 w-3.5" />
+                  <span>Outcome</span>
+                </div>
+                <p className="text-xs text-zinc-300 leading-relaxed bg-emerald-950/20 border border-emerald-500/20 p-3.5 rounded-xl">
+                  {project.outcome}
+                </p>
+              </div>
+            </div>
+
+            {/* Bottom Actions */}
+            <div className="mt-8 pt-5 border-t border-zinc-800/60 flex items-center justify-between gap-4">
+              <button
+                onClick={() => setSelectedProject(project)}
+                className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-emerald-400 hover:text-emerald-300 transition-colors uppercase tracking-wider cursor-pointer"
+              >
+                <span>Inspect Technical Breakdown</span>
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </button>
+
+              <a
+                href="#contact"
+                className="px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-[11px] font-mono text-zinc-300 hover:text-white transition-all"
+              >
+                Discuss Scope
+              </a>
+            </div>
+          </motion.article>
+        ))}
+      </div>
+
+      {/* Slide-over Side Drawer for Deep Technical Inspection */}
       <AnimatePresence>
         {selectedProject && (
           <>
-            {/* Backdrop Blur */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.6 }}
@@ -170,7 +184,6 @@ export default function ProjectGrid() {
               className="fixed inset-0 bg-black z-50 backdrop-blur-sm"
             />
 
-            {/* Slider Drawer Container */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -181,8 +194,16 @@ export default function ProjectGrid() {
               {/* Drawer Header */}
               <div className="p-6 border-b border-zinc-800 bg-zinc-900/40 flex justify-between items-center">
                 <div>
-                  <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase font-bold">ENG CASE STUDY</span>
-                  <h3 className="font-display font-bold text-2xl text-white mt-1">{selectedProject.title}</h3>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-mono tracking-widest text-emerald-400 uppercase font-bold">
+                      {selectedProject.client}
+                    </span>
+                    <span className="text-zinc-600">•</span>
+                    <span className="text-[10px] font-mono text-zinc-400 uppercase">Architecture Deep Dive</span>
+                  </div>
+                  <h3 className="font-display font-bold text-2xl text-white mt-1">
+                    {selectedProject.title}
+                  </h3>
                 </div>
                 <button
                   onClick={() => setSelectedProject(null)}
@@ -193,46 +214,39 @@ export default function ProjectGrid() {
               </div>
 
               {/* Drawer Content */}
-              <div className="p-6 space-y-8 flex-1">
-                {/* Metrics Highlights Section */}
+              <div className="p-6 space-y-7 flex-1">
+                {/* Metrics */}
                 {selectedProject.metrics && (
-                  <div className="grid grid-cols-3 gap-4 bg-zinc-900/60 border border-zinc-800 p-4 rounded-xl">
+                  <div className="grid grid-cols-3 gap-3 bg-zinc-900/60 border border-zinc-800 p-4 rounded-xl">
                     {selectedProject.metrics.map((m, mIdx) => (
                       <div key={mIdx} className="text-center">
-                        <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block">{m.label}</span>
-                        <span className="text-lg font-bold font-mono text-emerald-400 mt-1 block">{m.value}</span>
+                        <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block">
+                          {m.label}
+                        </span>
+                        <span className="text-base font-bold font-mono text-emerald-400 mt-1 block">
+                          {m.value}
+                        </span>
                       </div>
                     ))}
                   </div>
                 )}
 
-                {/* Problem Statement */}
-                <div className="space-y-3">
-                  <h4 className="flex items-center gap-2 font-display font-semibold text-white">
-                    <Zap className="h-4 w-4 text-amber-500" />
-                    <span>The Technical Constraint (Problem)</span>
+                {/* Problem Breakdown */}
+                <div className="space-y-2.5">
+                  <h4 className="flex items-center gap-2 font-display font-semibold text-white text-sm">
+                    <ShieldAlert className="h-4 w-4 text-amber-400" />
+                    <span>Problem Statement & Architectural Bottleneck</span>
                   </h4>
                   <p className="text-xs text-zinc-300 leading-relaxed pl-6">
                     {selectedProject.problem}
                   </p>
                 </div>
 
-                {/* Architecture Solution */}
-                <div className="space-y-3">
-                  <h4 className="flex items-center gap-2 font-display font-semibold text-white">
-                    <Layers className="h-4 w-4 text-emerald-500" />
-                    <span>Engineered Solution & Architecture</span>
-                  </h4>
-                  <p className="text-xs text-zinc-300 leading-relaxed pl-6">
-                    {selectedProject.solution}
-                  </p>
-                </div>
-
-                {/* Full Stack Tech Details */}
-                <div className="space-y-3">
-                  <h4 className="flex items-center gap-2 font-display font-semibold text-white">
-                    <ShieldCheck className="h-4 w-4 text-emerald-500" />
-                    <span>Engineered Stack</span>
+                {/* Tech Stack Breakdown */}
+                <div className="space-y-2.5">
+                  <h4 className="flex items-center gap-2 font-display font-semibold text-white text-sm">
+                    <Layers className="h-4 w-4 text-cyan-400" />
+                    <span>Engineered Technology Stack</span>
                   </h4>
                   <div className="flex flex-wrap gap-2 pl-6">
                     {selectedProject.techStack.map((tech) => (
@@ -245,17 +259,38 @@ export default function ProjectGrid() {
                     ))}
                   </div>
                 </div>
+
+                {/* Execution Detail */}
+                <div className="space-y-2.5">
+                  <h4 className="flex items-center gap-2 font-display font-semibold text-white text-sm">
+                    <Wrench className="h-4 w-4 text-emerald-400" />
+                    <span>Technical Execution & Implementation</span>
+                  </h4>
+                  <p className="text-xs text-zinc-300 leading-relaxed pl-6">
+                    {selectedProject.execution}
+                  </p>
+                </div>
+
+                {/* Outcome Detail */}
+                <div className="space-y-2.5">
+                  <h4 className="flex items-center gap-2 font-display font-semibold text-white text-sm">
+                    <TrendingUp className="h-4 w-4 text-emerald-300" />
+                    <span>Measured Outcome & Delivery</span>
+                  </h4>
+                  <p className="text-xs text-zinc-300 leading-relaxed pl-6">
+                    {selectedProject.outcome}
+                  </p>
+                </div>
               </div>
 
               {/* Drawer Footer Actions */}
               <div className="p-6 border-t border-zinc-800 bg-zinc-900/20 flex gap-4">
                 <a
-                  href={selectedProject.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 bg-zinc-100 hover:bg-emerald-400 hover:shadow-[0_0_15px_rgba(16,185,129,0.4)] text-zinc-950 font-bold rounded-xl text-xs uppercase tracking-wider transition-all"
+                  href="#contact"
+                  onClick={() => setSelectedProject(null)}
+                  className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 bg-zinc-100 hover:bg-emerald-400 text-zinc-950 font-bold rounded-xl text-xs uppercase tracking-wider transition-all"
                 >
-                  <span>Launch Live Platform</span>
+                  <span>Inquire for Agency Overflow</span>
                   <ExternalLink className="h-4 w-4" />
                 </a>
               </div>
@@ -264,7 +299,7 @@ export default function ProjectGrid() {
         )}
       </AnimatePresence>
 
-      {/* Side Drawer for Secondary Project Index */}
+      {/* Secondary Projects Directory Drawer */}
       <AnimatePresence>
         {showSecondaryIndex && (
           <>
@@ -285,8 +320,12 @@ export default function ProjectGrid() {
             >
               <div className="p-6 border-b border-zinc-800 bg-zinc-900/40 flex justify-between items-center">
                 <div>
-                  <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase font-bold">ADDITIONAL RECORDS</span>
-                  <h3 className="font-display font-bold text-2xl text-white mt-1">Secondary Brand Index</h3>
+                  <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase font-bold">
+                    ADDITIONAL AGENCY WORK
+                  </span>
+                  <h3 className="font-display font-bold text-2xl text-white mt-1">
+                    Secondary Brands Directory
+                  </h3>
                 </div>
                 <button
                   onClick={() => setShowSecondaryIndex(false)}
@@ -298,19 +337,19 @@ export default function ProjectGrid() {
 
               {/* Index List scrollable container */}
               <div className="p-6 space-y-4 overflow-y-auto flex-1">
-                <p className="text-xs text-zinc-400 leading-relaxed mb-6">
-                  Here is a comprehensive index of additional enterprise-level storefronts, custom applications, and global e-commerce platforms Muhammad Usama has engineered, optimized, or remediated for international clients:
+                <p className="text-xs text-zinc-400 leading-relaxed mb-4">
+                  Additional enterprise Shopify storefronts, B2B portals, and brand implementations engineered or remediated across agency client portfolios:
                 </p>
 
                 <div className="space-y-3">
                   {OTHER_PROJECTS.map((item, index) => (
                     <div 
                       key={index}
-                      className="p-4 rounded-xl border border-zinc-900 bg-zinc-900/45 hover:bg-zinc-900 hover:border-zinc-800/80 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                      className="p-4 rounded-xl border border-zinc-900 bg-zinc-900/45 hover:bg-zinc-900 hover:border-zinc-800 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                     >
                       <div className="space-y-1">
                         <h4 className="font-display font-semibold text-white text-sm">{item.name}</h4>
-                        <p className="text-xs text-zinc-400">{item.description}</p>
+                        <p className="text-xs text-zinc-400 leading-relaxed">{item.description}</p>
                       </div>
 
                       <a
@@ -332,7 +371,7 @@ export default function ProjectGrid() {
                   onClick={() => setShowSecondaryIndex(false)}
                   className="w-full py-3 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white text-xs font-semibold uppercase tracking-wider rounded-xl transition-all border border-zinc-800 hover:border-zinc-700"
                 >
-                  Close Architecture Index
+                  Close Directory
                 </button>
               </div>
             </motion.div>
