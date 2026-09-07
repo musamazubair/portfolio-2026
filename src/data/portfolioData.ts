@@ -195,12 +195,12 @@ export const CAREER_TIMELINE: Experience[] = [
 ];
 
 export const OTHER_PROJECTS = [
-  { name: "Oribe Haircare", url: "https://oribe.com", description: "Ultra-luxury high-traffic Shopify Plus storefront. Variant-aware media gallery and responsive sticky PDP layout." },
-  { name: "Guest in Residence", url: "https://guestinresidence.com", description: "Minimalist cashmere fashion storefront. Custom aspect-ratio grid and smooth client transitions." },
-  { name: "USM Modular Furniture", url: "https://us.usm.com", description: "Swiss luxury modular system. Configurator state ingestion into Shopify Cart API with keyboard ARIA navigation." },
-  { name: "Joanna Czech Skincare", url: "https://www.joannaczech.com", description: "WCAG 2.1 AA accessibility remediation across purchase funnel components and custom variant inputs." },
-  { name: "Live Costa Brazil", url: "https://livecostabrazil.com", description: "Eco-luxury beauty brand storefront refinements and performance profiling." },
-  { name: "Brazilian Blowout", url: "https://store-brazilianblowout-com.myshopify.com", description: "B2B wholesale portal, gated pricing rules, and custom volume tier checkouts." },
-  { name: "Retrouvé Prestige Skincare", url: "https://retrouve.com", description: "Ultra-clean layout configuration and bespoke media blocks." },
-  { name: "Molton Brown UK", url: "https://www.moltonbrown.co.uk", description: "Enterprise UK cosmetics retailer. Theme container refactor and third-party script collision audit." }
+  { name: "Oribe Haircare", url: "https://oribe.com", description: "High-traffic Shopify Plus storefront. Engineered variant-aware media gallery and responsive sticky PDP layout." },
+  { name: "Guest in Residence", url: "https://guestinresidence.com", description: "Premium cashmere storefront. Implemented custom aspect-ratio grids and layout transition logic." },
+  { name: "USM Modular Furniture", url: "https://us.usm.com", description: "Modular configuration system. Ingested configurator state into Shopify Cart API with comprehensive keyboard ARIA navigation." },
+  { name: "Joanna Czech Skincare", url: "https://www.joannaczech.com", description: "Executed strict WCAG 2.1 AA accessibility remediation across checkout funnel components and variant inputs." },
+  { name: "Live Costa Brazil", url: "https://livecostabrazil.com", description: "Eco-luxury beauty brand. Delivered Core Web Vitals optimization and third-party script deferral." },
+  { name: "Brazilian Blowout", url: "https://store-brazilianblowout-com.myshopify.com", description: "B2B wholesale portal. Architected gated pricing rules and custom volume-tier checkout mechanics." },
+  { name: "Retrouvé Prestige Skincare", url: "https://retrouve.com", description: "Engineered robust layout configurations and optimized bespoke media delivery blocks." },
+  { name: "Molton Brown UK", url: "https://www.moltonbrown.co.uk", description: "Enterprise UK retailer. Refactored theme containers and resolved third-party script collision issues." }
 ];

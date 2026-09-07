@@ -345,7 +345,7 @@ export default function App() {
                 <span className="text-[10px] font-mono tracking-widest text-emerald-400 uppercase font-semibold block mb-2">AGENCY INTEGRATION SPEC</span>
                 <h3 className="font-display font-semibold text-base text-white">Workflow & Collaboration Tooling</h3>
                 <p className="text-xs text-zinc-400 mt-3 leading-relaxed">
-                  Seamlessly integrates into agency environments utilizing Jira/Linear, Figma design token translation, GitHub flow/PR reviews, and automated CI/CD deployment pipelines on Vercel, Netlify, or Shopify CLI.
+                  Directly integrates into agency environments utilizing Jira/Linear, Figma design token translation, GitHub flow/PR reviews, and automated CI/CD deployment pipelines on Vercel, Netlify, or Shopify CLI.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {["Shopify CLI 3.x", "Theme Check", "GitHub Actions", "Vercel CI", "Figma", "Linear / Jira"].map((tool) => (

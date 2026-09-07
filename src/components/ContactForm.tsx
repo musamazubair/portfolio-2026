@@ -51,17 +51,20 @@ export default function ContactForm() {
     setTimeout(() => setCopiedEmail(false), 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   const mailtoSubject = encodeURIComponent(
     `[Technical Director Inquiry] ${formData.agency || "Agency"} - ${formData.engagementType}`
   );
   const mailtoBody = encodeURIComponent(
     `Name: ${formData.name}\nAgency: ${formData.agency}\nEmail: ${formData.email}\nEngagement Type: ${formData.engagementType}\nTarget Timeline: ${formData.timeline}\n\nTechnical Requirements / Scope:\n${formData.scope}`
   );
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    
+    // Automatically trigger the email client for a premium, frictionless experience
+    window.location.href = `mailto:${PERSONAL_INFO.email}?subject=${mailtoSubject}&body=${mailtoBody}`;
+  };
 
   return (
     <div className="rounded-3xl glass-panel border border-zinc-800/90 p-6 sm:p-10 md:p-12 relative overflow-hidden shadow-2xl">
